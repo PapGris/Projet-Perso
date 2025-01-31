@@ -4,11 +4,21 @@
 
 body {
     margin: 0px 0px 0px 0px;
-    margin-top: -18px;
+    margin-top: -26px;
+    background-color: #9CC6FF;
 }
 
 header {
-    background-color: #9DC7FF;
+    background-color: #9CC6FF;
+    height: 10px;
+    position: fixed;
+    width: 100%;
+}
+
+.pancarte:hover{
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 1s ease-in-out infinite;
 }
 
 .container ul{
@@ -25,8 +35,191 @@ header ul li{
     list-style-type: none;
 }
 
-header ul li:nth-child(1),li:nth-child(3) {
+header ul li:nth-child(2){
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.6);
+    border-radius: 0px 0px 50% 50%;
+    background: #b6b993a9; 
+}
+
+header ul li:nth-child(1),header li:nth-child(3) {
     margin-top: 50px;
+}
+
+nav {
+    backdrop-filter: blur(10px);
+    
+}
+
+/* LEFT */
+.flip-card-left {
+    backdrop-filter: blur(10px);
+    width: 30px; 
+    perspective: 1000px;
+    transition: all 0.2s;
+    height:calc(100% - 5px); 
+    transition: all 0.2s;
+    position :fixed;
+    margin-top: 100px;
+    border-radius: 0% 100% 100% 0%;
+}
+
+.flip-card-left ul li {
+    list-style-type: none;
+}
+
+.flip-card-left ul {
+    padding-right: 50px;
+}
+
+.flip-card-left:hover {
+    background-color: transparent;
+    width: 17%;
+    height:calc(100% - 5px); 
+    transition: all 0.2s;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; 
+}
+
+.flip-card-left:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: red;
+    color: black;
+}
+
+.flip-card-back {
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* RIGHT */
+.flip-card-right {
+    backdrop-filter: blur(10px);
+    width: 30px;
+    height:calc(100% - 5px);
+    perspective: 1000px;
+    transition: all 0.2s;
+    position :fixed;
+    right: 0;
+    margin-top: 100px;
+    border-radius: 100% 0% 0% 100%;
+}
+
+.flip-card-right ul li {
+    list-style-type: none;
+}
+
+.flip-card-right ul {
+    padding-right: 50px;
+}
+
+.flip-card-right:hover {
+    background-color: transparent;
+    width: 17%;
+    height:calc(100% - 5px); 
+    transition: all 0.2s;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d; 
+}
+
+.flip-card-right:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back { 
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.icones:hover{
+    overflow: hidden;
+    transform: translatey(0px);
+    animation: float 1s ease-in-out infinite;
+}
+
+main.middle {
+    background-image: url(../img/Paysages/background_paysage.png);
+    background-position: 0px -650px; 
+    background-size: cover;
+    width: 100%;
+    height: 103.5vh;
+}
+
+main {
+    margin :0px auto;
+    max-width: 100%;
+}
+
+footer {
+    background: transparent;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-around; 
+    flex-wrap: wrap;
+}
+
+footer ul li{
+    list-style-type: none;
 }
 
 @media (min-width: 500px) {   
@@ -89,5 +282,17 @@ header ul li:nth-child(1),li:nth-child(3) {
     
     header ul li:nth-child(3) {
         margin-right: 100px;
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translatey(5px);
+    }
+    50% {
+        transform: translatey(-5px);
+    }
+    100% {
+        transform: translatey(5px);
     }
 }
