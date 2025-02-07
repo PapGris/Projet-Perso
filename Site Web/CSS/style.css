@@ -72,7 +72,6 @@ nav {
 }
 
 .flip-card-left:hover {
-    background-color: transparent;
     backdrop-filter: blur(10px);
     width: 17%;
     height:calc(100% - 5px); 
@@ -110,8 +109,11 @@ nav {
     backface-visibility: hidden;
 }
 
+nav .icones {
+    padding-top: 20px;
+}
+
 /* COTE PILE */
- 
 
 .flip-card-back { 
     transform: rotateY(180deg);
